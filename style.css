@@ -1,0 +1,305 @@
+/* v0.7 theme tokens: light / dark (calendar colors are separate) */
+:root{color-scheme:light;
+ --bg:#faf9f5;--surface:#ffffff;--surface-2:#f3f2ec;--hover:#f6f5f0;--selected:#efede5;
+ --border:#e6e4dc;--divider:#efede6;
+ --text:#1f1e1d;--text-2:#55534e;--muted:#87857e;--faint:#b0aea6;
+ --primary:#1f1e1d;--on-primary:#faf9f5;
+ --danger:#c0453a;--danger-bg:#fbeceb;--backdrop:#1f1e1d66;
+ --raised:#ffffff;--holiday:#d2463a;--anniv:#b4498a;--saturday:#3b6bd6;--shadow:0 20px 60px #0000001f;--shadow-sm:0 1px 4px #0000001a}
+:root[data-theme=dark]{color-scheme:dark;
+ --bg:#262624;--surface:#30302e;--surface-2:#3a3a37;--hover:#353532;--selected:#41413d;
+ --border:#43423e;--divider:#3a3936;
+ --text:#f5f4ef;--text-2:#c8c6bd;--muted:#9a988f;--faint:#6e6c66;
+ --primary:#f5f4ef;--on-primary:#1f1e1d;
+ --danger:#f08a80;--danger-bg:#4a2b28;--backdrop:#00000099;
+ --raised:#4a4a46;--holiday:#ff8a7c;--anniv:#f29ccc;--saturday:#8fb1ff;--shadow:0 20px 60px #00000080;--shadow-sm:0 1px 4px #00000066}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark;
+ --bg:#262624;--surface:#30302e;--surface-2:#3a3a37;--hover:#353532;--selected:#41413d;
+ --border:#43423e;--divider:#3a3936;
+ --text:#f5f4ef;--text-2:#c8c6bd;--muted:#9a988f;--faint:#6e6c66;
+ --primary:#f5f4ef;--on-primary:#1f1e1d;
+ --danger:#f08a80;--danger-bg:#4a2b28;--backdrop:#00000099;
+ --raised:#4a4a46;--holiday:#ff8a7c;--anniv:#f29ccc;--saturday:#8fb1ff;--shadow:0 20px 60px #00000080;--shadow-sm:0 1px 4px #00000066}}
+:root{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",sans-serif;color:var(--text);background:var(--bg);font-synthesis:none}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 12px;background:var(--surface-2);color:var(--text-2)}button:hover{filter:brightness(.97)}.shell{display:flex;min-height:100vh;max-width:1650px;margin:auto}.sidebar{width:250px;flex-shrink:0;padding:32px 18px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:20px}.brand{display:flex;align-items:center;gap:8px;font-size:23px;letter-spacing:-1px}.brandmark{color:var(--primary)}.brand small{font-size:10px;color:var(--faint);letter-spacing:0;margin-left:auto}.primary{background:var(--primary);color:var(--on-primary)}.sidebar>.primary{width:100%;padding:13px}.sidehead{display:flex;align-items:center;justify-content:space-between;color:var(--text-2);font-size:12px;font-weight:700;margin-top:12px}.iconbtn{font-size:22px;background:none;padding:2px 8px}.calrow{display:flex;align-items:center;gap:10px;margin:6px 0;border-radius:10px;padding:8px 4px}.dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}.calname{flex:1;background:none;text-align:left;padding:3px 0;font-size:13px}.eye{background:none;color:var(--muted);padding:3px;font-size:15px}.sidebottom{margin-top:auto}.sidebottom button{width:100%;text-align:left;background:none;font-size:13px}.sidebottom p{font-size:11px;color:var(--faint);padding-left:12px}main{flex:1;min-width:0;padding:34px 34px 24px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:800}h1{font-size:31px;letter-spacing:-1px;margin:7px 0 0}h2{margin:7px 0}.headtools{display:flex;gap:7px}.headtools button{background:var(--surface);border:1px solid var(--border);min-width:37px}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:20px}.calendar,.detail{background:var(--surface);border:1px solid var(--border);border-radius:17px;overflow:hidden}.weekdays{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;padding:17px 0;color:var(--muted);font-size:12px}.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));grid-auto-rows:minmax(92px,1fr)}.day{min-width:0;border-top:1px solid var(--divider);border-right:1px solid var(--divider);padding:8px;cursor:pointer;position:relative}.day:nth-child(7n){border-right:0}.day:hover{background:var(--hover)}.day.outside{color:var(--faint);background:var(--surface-2)}.day.selected{background:var(--selected)}.day.today .number{background:var(--primary);color:var(--on-primary)}.number{display:inline-flex;align-items:center;justify-content:center;width:25px;height:25px;border-radius:50%;font-size:12px}.pill{font-size:10px;margin-top:5px;padding:3px 5px;border-radius:5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;background:var(--surface-2)}.more{font-size:10px;color:var(--faint);margin-top:4px}.detail{display:flex;flex-direction:column;min-height:480px}.detailtop{padding:22px;border-bottom:1px solid var(--divider)}.detailtop h2{font-size:22px}.detailtop p{color:var(--faint);font-size:12px;margin:0}.detailhead{display:flex;align-items:center;justify-content:space-between;padding:20px 17px 10px;font-size:13px}.detailhead button{font-size:20px;background:none;padding:0 7px;color:var(--primary)}#eventList{padding:0 14px;flex:1}.task{display:flex;align-items:flex-start;gap:8px;padding:12px 4px;border-bottom:1px solid var(--divider)}.task input{accent-color:var(--primary);margin-top:3px}.task .body{flex:1;min-width:0;cursor:pointer}.task .body.done{text-decoration:line-through;color:var(--faint)}.task .body div{font-size:12px;overflow-wrap:anywhere}.task .body small{color:var(--muted);font-size:10px}.empty{font-size:12px;color:var(--faint);text-align:center;padding:40px 5px}.detailfooter{padding:17px;color:var(--faint);font-size:11px;border-top:1px solid var(--divider)}.mobilecal{display:none}dialog{border:0;border-radius:18px;padding:0;box-shadow:var(--shadow);width:min(430px,calc(100vw - 28px));color:var(--text)}dialog::backdrop{background:var(--backdrop)}dialog form,.settings{padding:26px;display:flex;flex-direction:column;gap:16px}dialog h2{font-size:20px;margin:0 0 6px}dialog label{display:flex;flex-direction:column;gap:7px;font-size:12px;color:var(--text-2)}dialog input:not([type=checkbox]):not([type=color]):not([type=range]),dialog select,dialog textarea{width:100%;border:1px solid var(--border);background:var(--surface);border-radius:9px;padding:11px;color:var(--text)}dialog input[type=color]{height:40px;width:80px;border:0;background:none}.checkline{flex-direction:row!important;align-items:center;gap:8px!important}.actions{display:flex;align-items:center;gap:8px;margin-top:8px}.actions span{flex:1}.danger{color:var(--danger);background:var(--danger-bg)}.notice{background:var(--surface-2);padding:13px;border-radius:10px;color:var(--text-2);font-size:12px;line-height:1.6}.muted{color:var(--faint);font-size:11px}.importLabel{padding:10px 12px;border-radius:10px;background:var(--surface-2);color:var(--text-2);cursor:pointer}.wrap{flex-wrap:wrap}body.glass{background:transparent}body.glass .shell{background:color-mix(in srgb,var(--bg) calc(var(--glass-opacity,.9)*100%),transparent)}body.glass .calendar,body.glass .detail{background:color-mix(in srgb,var(--surface) 56%,transparent)}@media(max-width:1050px){.workspace{grid-template-columns:minmax(0,1fr)}.detail{min-height:220px}.days{grid-auto-rows:minmax(75px,1fr)}}@media(max-width:700px){.shell{display:block}.sidebar{width:auto;border:0;padding:12px 16px;gap:10px}.brand{font-size:20px}.sidebar>.primary,.sidehead,.sidebottom{display:none}#calList{display:flex;gap:5px;overflow-x:auto}#calList .calrow{padding:5px 9px;background:var(--surface);white-space:nowrap;flex-shrink:0}#calList .calname{font-size:11px}#calList .eye{display:none}main{padding:12px 12px 30px}header{margin-bottom:13px}h1{font-size:24px}.workspace{gap:12px}.days{grid-auto-rows:minmax(65px,1fr)}.day{padding:4px}.number{width:22px;height:22px;font-size:11px}.pill{font-size:0;width:6px;height:6px;border-radius:50%;display:inline-block;padding:0;margin:3px 2px 0 0}.more{display:none}.weekdays{padding:12px 0}.mobilecal{display:flex;justify-content:space-between;margin-bottom:12px}.detailtop{padding:17px}.detail{min-height:230px}.headtools button{padding:8px}}
+
+/* v0.3: mobile-accessible settings and calendar management */
+.mobilecal{gap:8px}.mobilecal button{flex:1;min-width:0}.manage-cal-row{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);padding:9px 0}.manage-cal-name{flex:1;text-align:left;background:transparent;font-weight:600}.manage-cal-name small{display:block;font-size:10px;color:var(--faint);font-weight:400;margin-top:3px}.manage-cal-row>button:last-child{font-size:11px}.share-info{border:1px solid var(--border);border-radius:12px;padding:14px}.share-info h3{font-size:14px;margin:0 0 6px}.share-info p{font-size:12px;color:var(--text-2);line-height:1.65}.share-info button:disabled{opacity:.55;cursor:not-allowed}.settings-tabs{display:flex;gap:6px}.settings-tabs button{background:var(--surface-2);color:var(--text-2)}
+@media(max-width:700px){.mobilecal{display:grid;grid-template-columns:1.35fr 1.2fr .85fr}.mobilecal button{font-size:12px;padding:11px 4px}.sidebar{padding-top:max(14px,env(safe-area-inset-top))}.brand small{margin-left:auto}dialog .settings{max-height:85dvh;overflow-y:auto}}
+
+.cloud-settings{max-width:520px}.cloud-settings input,.cloud-settings select{width:100%}.cloud-settings [hidden]{display:none!important}.cloud-settings button{min-height:40px}.cloud-settings .notice{line-height:1.6}.cloud-settings .actions.wrap{flex-wrap:wrap}.cloud-settings h3{margin:20px 0 8px}
+
+/* Daydot 0.4.1: responsive, non-zooming iOS form dialogs */
+html,body{max-width:100%;overflow-x:clip}
+dialog{box-sizing:border-box;max-width:calc(100vw - 24px);max-height:calc(100dvh - 32px);margin:auto;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+dialog form,dialog .settings{min-width:0;max-width:100%;box-sizing:border-box}
+dialog label,dialog .actions,dialog form>*,dialog .settings>*{min-width:0}
+dialog input:not([type=checkbox]):not([type=color]):not([type=range]),dialog textarea,dialog select{display:block;max-width:100%;min-width:0;font-size:16px;line-height:1.35}
+dialog textarea{resize:vertical}
+@media(max-width:700px){
+ dialog{position:fixed;inset:0;width:calc(100vw - 24px);max-width:calc(100vw - 24px);max-height:calc(100dvh - 32px);border-radius:18px}
+ dialog form,dialog .settings{padding:20px 18px;gap:14px;max-height:calc(100dvh - 32px);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+ dialog h2{font-size:21px}
+ dialog label{font-size:13px}
+ dialog .actions{flex-wrap:wrap;justify-content:flex-end}
+ dialog .actions span{flex:1 1 8px}
+ dialog .actions button{min-height:42px}
+}
+
+/* v0.4.2 mobile UX: settings at top right, nested backup, and personal DAY tab */
+.top-settings{display:none}.mobile-view-tabs{display:none}.mobile-day-page[hidden],.backup-section[hidden]{display:none!important}
+.settings-section-button{text-align:left;font-weight:700;background:var(--surface-2);color:var(--text-2);padding:14px;border:1px solid var(--border)}
+.backup-section{background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+@media(max-width:700px){
+ .brand{min-height:42px;gap:7px}.brand small{display:none}
+ .top-settings{display:inline-flex;align-items:center;justify-content:center;margin-left:auto;background:var(--surface);border:1px solid var(--border);border-radius:12px;width:42px;height:42px;font-size:22px;flex:0 0 42px;min-width:42px}
+ .mobile-view-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:0 0 12px;background:var(--surface-2);border-radius:14px;padding:4px}
+ .mobile-view-tabs button{font-size:14px;font-weight:650;background:transparent;min-height:42px}
+ .mobile-view-tabs button.active{background:var(--surface);box-shadow:var(--shadow-sm);color:var(--text-2)}
+ .mobilecal{grid-template-columns:1fr 1fr;gap:8px}
+ .mobile-day-page{display:block;background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:18px 16px 14px;margin-bottom:14px}
+ .day-page-header{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--divider);padding-bottom:16px}
+ .day-page-header h2{margin:6px 0;font-size:23px}.day-page-header .muted{margin:0;line-height:1.4}
+ .day-page-header button{font-size:13px;flex-shrink:0}
+ .personal-day-list{margin-top:12px}.personal-task{display:flex;align-items:flex-start;gap:11px;border-bottom:1px solid var(--divider);padding:15px 0}
+ .personal-task input{width:20px;height:20px;accent-color:var(--primary);flex-shrink:0;margin:1px 0}
+ .personal-task .dot{margin-top:5px}.personal-task-text{flex:1;text-align:left;background:transparent;padding:0;min-width:0;overflow-wrap:anywhere}
+ .personal-task-text strong{display:block;font-size:15px}.personal-task-text small{display:block;margin-top:6px;color:var(--muted);font-size:12px;white-space:pre-wrap}.personal-task-text.done{text-decoration:line-through;color:var(--faint)}
+ .day-page-count{font-size:12px;color:var(--muted);text-align:right;margin:14px 0 0}
+ .show-day-page .workspace{display:none}
+ .show-day-page .mobilecal{display:none}
+ .show-day-page header{margin-bottom:15px}
+}
+
+/* v0.4.3: photo attachments in event memo */
+.photo-attachments{margin-top:10px;display:flex;flex-direction:column;gap:9px;min-width:0}
+.photo-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.photo-top strong{font-size:15px}.photo-hint{font-size:11px;color:var(--muted)}
+.photo-pick{display:inline-flex;align-items:center;align-self:flex-start;padding:10px 15px;border-radius:12px;background:var(--surface-2);color:var(--text-2);font-size:14px;font-weight:700;cursor:pointer}
+.photo-preview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;min-width:0}
+.photo-tile{position:relative;min-width:0;aspect-ratio:1;border-radius:12px;overflow:hidden;background:var(--border)}
+.photo-tile img{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
+.photo-remove{position:absolute;top:4px;right:4px;border-radius:50%;border:none;background:#16161acc;color:#fff;width:25px;height:25px;min-width:25px;padding:0;font-size:16px}
+.photo-status{font-size:12px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere;margin:0}
+@media(max-width:650px){.photo-preview{grid-template-columns:repeat(3,minmax(0,1fr))}.photo-attachments{max-width:100%}}
+
+/* v0.4.4 Read-only event details */
+#eventViewDialog{width:min(470px,calc(100vw - 24px));max-height:calc(100dvh - 30px);overflow:auto}
+.event-view{padding:24px;display:flex;flex-direction:column;gap:15px;min-width:0}
+.event-view-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.event-view-overline{font-size:11px;letter-spacing:1.2px;font-weight:700;color:var(--muted)}
+.event-view-close{font-size:24px;background:transparent;padding:2px 10px;line-height:1}
+.event-view-cal{display:flex;align-items:center;gap:9px;color:var(--text-2);font-size:13px}
+#eventViewTitle{font-size:24px;overflow-wrap:anywhere;line-height:1.35;margin:0}
+.event-view-date{font-size:14px;color:var(--text-2);margin:0}
+.event-view-repeat{align-self:flex-start;background:var(--surface-2);color:var(--text-2);padding:6px 10px;border-radius:8px;font-size:12px}
+.event-view-section{border-top:1px solid var(--divider);padding-top:16px}
+.event-view-section h3{font-size:14px;margin:0 0 12px;color:var(--text-2)}
+.event-view-note{font-size:15px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;margin:0}
+.event-view-note.is-empty{color:var(--faint)}
+.event-view-actions{display:flex;justify-content:flex-end;gap:9px;padding-top:10px}
+.event-view-actions button{min-width:80px;min-height:44px}
+@media(max-width:700px){.event-view{padding:20px 18px;gap:14px}#eventViewTitle{font-size:22px}.event-view-section{padding-top:14px}}
+
+/* v0.5 DAY standalone task list */
+.todo-more{background:transparent;color:var(--muted);font-size:24px;min-width:38px;padding:0 5px;align-self:center}
+#todoDelete[hidden]{display:none!important}
+#todoDialog{width:min(440px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto}
+#todoDialog input,#todoDialog textarea{font-size:16px}
+
+/* v0.6: DAY tab on iPad/desktop too (was phone-only), sync status */
+@media(min-width:701px){
+ .mobile-view-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:0 0 18px;background:var(--surface-2);border-radius:14px;padding:4px;max-width:360px}
+ .mobile-view-tabs button{font-size:14px;font-weight:650;background:transparent;min-height:40px}
+ .mobile-view-tabs button.active{background:var(--surface);box-shadow:var(--shadow-sm);color:var(--text-2)}
+ .mobile-day-page{display:block;background:var(--surface);border:1px solid var(--border);border-radius:17px;padding:24px 24px 18px;max-width:760px}
+ .day-page-header{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid var(--divider);padding-bottom:16px}
+ .day-page-header h2{margin:6px 0;font-size:24px}.day-page-header .muted{margin:0;line-height:1.4}
+ .personal-day-list{margin-top:12px}.personal-task{display:flex;align-items:flex-start;gap:12px;border-bottom:1px solid var(--divider);padding:15px 0}
+ .personal-task input{width:20px;height:20px;accent-color:var(--primary);flex-shrink:0;margin:1px 0}
+ .personal-task-text{flex:1;text-align:left;background:transparent;padding:0;min-width:0;overflow-wrap:anywhere}
+ .personal-task-text strong{display:block;font-size:15px}.personal-task-text small{display:block;margin-top:6px;color:var(--muted);font-size:12px;white-space:pre-wrap}.personal-task-text.done{text-decoration:line-through;color:var(--faint)}
+ .day-page-count{font-size:12px;color:var(--muted);text-align:right;margin:14px 0 0}
+ .show-day-page .workspace{display:none}
+}
+.day-sync-status{text-align:right;margin:4px 0 0;font-size:11px}
+.day-sync-status:empty{display:none}
+/* iPhone home-screen app: keep content clear of the notch/home bar */
+main{padding-bottom:max(24px,env(safe-area-inset-bottom))}
+@media(max-width:700px){main{padding-bottom:max(30px,env(safe-area-inset-bottom))}.sidebar{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}}
+
+/* v0.7 theme polish */
+body{background:var(--bg);color:var(--text)}
+dialog{background:var(--surface);color:var(--text)}
+.brandmark{color:var(--text)}
+.day.today .number{font-weight:700}
+.calendar,.detail,.mobile-day-page{box-shadow:none}
+input[type=checkbox]{accent-color:var(--primary)}
+input[type=range]{accent-color:var(--primary)}
+.photo-tile{background:var(--surface-2)}
+.theme-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:4px}
+.theme-picker button{background:transparent;color:var(--text-2);font-size:13px;padding:9px 6px;border-radius:9px}
+.theme-picker button[aria-pressed=true]{background:var(--surface);color:var(--text);box-shadow:var(--shadow-sm);font-weight:600}
+.theme-label{font-size:12px;color:var(--text-2);margin-bottom:-8px}
+.mobile-view-tabs button.active,.theme-picker button[aria-pressed=true]{background:var(--raised)}
+.day.outside{background:var(--bg)}
+@media(max-width:700px){.pill{background:currentColor!important}}
+:root:has(body.glass){background:transparent}body.glass{background:transparent!important}
+
+/* v0.8 PC widget: frameless bar, glass, lock */
+.desktop-bar[hidden],.desktop-settings[hidden]{display:none!important}
+.desktop-bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;height:34px;padding:0 4px 0 0;background:var(--bg);border-bottom:1px solid var(--divider);user-select:none}
+.desktop-drag{flex:1;height:100%;display:flex;align-items:center;padding-left:14px;cursor:grab}
+.desktop-drag span{pointer-events:none;font-size:12px;font-weight:700;letter-spacing:.5px;color:var(--muted)}
+.win-locked .desktop-drag{cursor:default}
+.winbtn{width:34px;height:28px;padding:0;display:inline-grid;place-items:center;background:transparent;border-radius:7px;color:var(--text-2)}
+.winbtn:hover{background:var(--surface-2);filter:none}
+.winclose:hover{background:var(--danger-bg);color:var(--danger)}
+.winbtn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.winbtn[aria-pressed=true]{color:var(--text);background:var(--surface-2)}
+#winLock .shackle{transition:transform .15s;transform-origin:16px 11px}
+#winLock[aria-pressed=false] .shackle{transform:translateY(-2px) rotate(25deg)}
+.desktop-settings{border:1px solid var(--border);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.desktop-settings h3{font-size:14px;margin:0}
+.range-row{display:flex;align-items:center;gap:10px}.range-row input{flex:1}.range-row span{min-width:38px;text-align:right;color:var(--text)}
+.range-label.is-off{opacity:.45}
+.is-desktop .shell{min-height:calc(100vh - 34px)}
+/* glass: wallpaper shows through, cards follow the same opacity */
+body.glass .shell{background:color-mix(in srgb,var(--bg) calc(var(--glass-opacity,.7)*100%),transparent)}
+body.glass .desktop-bar{background:color-mix(in srgb,var(--bg) calc(var(--glass-opacity,.7)*100%),transparent)}
+body.glass .calendar,body.glass .detail,body.glass .mobile-day-page{background:color-mix(in srgb,var(--surface) calc(var(--card-opacity,.8)*100%),transparent);border-color:color-mix(in srgb,var(--border) calc(var(--card-opacity,.8)*100%),transparent)}
+body.glass .day.outside{background:color-mix(in srgb,var(--bg) calc(var(--card-opacity,.8)*60%),transparent)}
+body.glass .day.selected{background:color-mix(in srgb,var(--selected) calc(var(--card-opacity,.8)*100%),transparent)}
+body.glass .day{border-color:color-mix(in srgb,var(--divider) calc(var(--card-opacity,.8)*100% + 20%),transparent)}
+body.glass .sidebar{border-right-color:color-mix(in srgb,var(--border) 60%,transparent)}
+body.glass .shell{max-width:none}
+
+/* v0.8.1 collapsible sidebar (hidden by default on iPad/PC) */
+#sidebarToggle,.head-collapsed,.head-sep{display:none}
+.headtools svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block}
+@media(min-width:701px){
+ #sidebarToggle{display:inline-grid;place-items:center}
+ #sidebarToggle[aria-pressed=true]{background:var(--surface-2)}
+ .head-sep{display:block;width:1px;background:var(--divider);margin:6px 3px}
+ .sidebar-collapsed .sidebar{display:none}
+ .sidebar-collapsed .head-collapsed{display:inline-grid;place-items:center}
+ .sidebar-collapsed main{padding-left:28px;padding-right:28px}
+ .sidebar-collapsed .workspace{grid-template-columns:minmax(0,1fr) 250px}
+}
+@media(min-width:701px) and (max-width:1050px){.sidebar-collapsed .workspace{grid-template-columns:minmax(0,1fr)}}
+/* v0.8.3 glass: buttons, tabs and chips follow "캘린더 투명도" too */
+body.glass{--g:calc(var(--card-opacity,.8)*100%)}
+body.glass .headtools button,body.glass .mobilecal button,body.glass #calList .calrow,body.glass .top-settings{background:color-mix(in srgb,var(--surface) var(--g),transparent);border-color:color-mix(in srgb,var(--border) var(--g),transparent)}
+body.glass .mobile-view-tabs{background:color-mix(in srgb,var(--surface-2) var(--g),transparent)}
+body.glass .mobile-view-tabs button.active{background:color-mix(in srgb,var(--raised) var(--g),transparent)}
+body.glass #sidebarToggle[aria-pressed=true],body.glass .winbtn[aria-pressed=true]{background:color-mix(in srgb,var(--surface-2) var(--g),transparent)}
+body.glass .sidebar>.primary,body.glass .day-page-header .primary{background:color-mix(in srgb,var(--primary) calc(var(--card-opacity,.8)*100%),transparent)}
+body.glass .pill{opacity:max(.75,var(--card-opacity,.8))}
+
+/* v0.9 Korean public holidays: red days */
+.weekdays span:first-child{color:var(--holiday)}.weekdays span:last-child{color:var(--saturday)}
+.day.sun .number,.day.holiday .number{color:var(--holiday)}
+.day.sat:not(.holiday) .number{color:var(--saturday)}
+.day.today .number{color:var(--on-primary)}
+.day.today.holiday .number,.day.today.sun .number{background:var(--holiday);color:#fff}
+.day.outside .number,.day.outside .holiday-name{opacity:.45}
+.holiday-name{display:block;margin-top:3px;font-size:10px;line-height:1.3;color:var(--holiday);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#selectedSub.is-holiday{color:var(--holiday)}
+@media(max-width:700px){.holiday-name{font-size:8.5px;margin-top:1px;letter-spacing:-.3px}}
+
+/* v0.11 drag a calendar onto a date */
+.cal-chips{display:none}
+@media(min-width:701px){.sidebar-collapsed .cal-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}}
+.cal-chip{display:inline-flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;background:var(--surface);border:1px solid var(--border);font-size:12px;color:var(--text-2)}
+.cal-chip.is-hidden{opacity:.45}
+.cal-chip,.calrow[data-cal]{cursor:grab;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:pan-x pan-y}
+.cal-dragging,.cal-dragging *{cursor:grabbing!important;-webkit-user-select:none;user-select:none}
+.drag-ghost{position:fixed;left:0;top:0;z-index:1000;pointer-events:none;display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;background:var(--surface);color:var(--text);border:1px solid var(--border);box-shadow:var(--shadow);font-size:13px;font-weight:600}
+.day.drop-target{background:var(--selected)!important;box-shadow:inset 0 0 0 2px var(--primary)}
+body.glass .cal-chip{background:color-mix(in srgb,var(--surface) var(--g),transparent);border-color:color-mix(in srgb,var(--border) var(--g),transparent)}
+.calname{flex:1;padding:3px 0;font-size:13px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#calList .calname{font-size:inherit}@media(max-width:700px){#calList .calname{font-size:11px}}
+/* v0.12 family birthdays */
+.anniv-name{display:block;margin-top:3px;font-size:10px;line-height:1.3;color:var(--anniv);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.anniv-name::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;margin:0 4px 1px 0;vertical-align:middle}
+.day.outside .anniv-name{opacity:.45}
+@media(max-width:700px){.anniv-name{font-size:8.5px;margin-top:1px;letter-spacing:-.3px}.anniv-name::before{width:4px;height:4px;margin-right:2px}}
+
+/* v0.13 multi-day events: continuous bars */
+.date-range{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:8px;min-width:0}
+.date-range-sep{padding-bottom:12px;color:var(--muted)}
+.lanes{display:flex;flex-direction:column;gap:4px;margin-top:5px}
+.lanes:empty{display:none}
+.bar{height:18px;margin:0 -9px 0 -8px;background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c);font-size:10px;line-height:18px;padding:0 6px;white-space:nowrap;overflow:hidden;position:relative;cursor:pointer}
+.bar span{position:relative;z-index:1;font-weight:600}
+.bar.cap-l{margin-left:0;border-radius:5px 0 0 5px;box-shadow:inset 3px 0 0 var(--c)}
+.bar.cap-r{margin-right:0;border-top-right-radius:5px;border-bottom-right-radius:5px}
+.bar.cap-l.cap-r{border-radius:5px}
+.day:nth-child(7n) .bar{margin-right:-8px}.day:nth-child(7n) .bar.cap-r{margin-right:0}
+.bar-empty{visibility:hidden;pointer-events:none}
+.lanes+.pill{margin-top:4px}
+.day.range-pick{background:var(--selected)!important;box-shadow:inset 0 0 0 1.5px var(--primary)}
+.range-dragging,.range-dragging *{cursor:col-resize!important;-webkit-user-select:none;user-select:none}
+.day{-webkit-touch-callout:none}
+body.glass .bar{background:color-mix(in srgb,var(--c) calc(var(--card-opacity,.8)*28%),transparent)}
+@media(max-width:700px){
+ .lanes{gap:3px;margin-top:3px}
+ .bar{height:4px;line-height:4px;padding:0;margin:0 -5px 0 -4px;background:var(--c);opacity:.85}
+ .bar span{display:none}
+ .bar.cap-l{margin-left:1px;border-radius:3px 0 0 3px;box-shadow:none}
+ .bar.cap-r{margin-right:1px;border-radius:0 3px 3px 0}.bar.cap-l.cap-r{border-radius:3px}
+ .day:nth-child(7n) .bar{margin-right:-4px}.day:nth-child(7n) .bar.cap-r{margin-right:1px}
+}
+
+/* v0.13 keep bars aligned: names beside the date number */
+.day-head{display:flex;align-items:center;gap:5px;min-width:0;height:25px}
+.day-head .number{flex-shrink:0}
+.day-head .holiday-name,.day-head .anniv-name{margin-top:0;min-width:0;flex:1 1 0}
+.day-head .anniv-name{flex:1 1 0}
+.singles:empty{display:none}
+.lanes+.singles .pill:first-child{margin-top:4px}
+@media(max-width:700px){
+ .day{display:flex;flex-direction:column}
+ .day-head{display:contents}
+ .day .number{order:0}.day .lanes{order:1}.day .holiday-name,.day .anniv-name{order:2;margin-top:2px}.day .singles{order:3}
+ .lanes+.singles .pill:first-child{margin-top:3px}
+}
+
+/* v0.13.1 PC: thin line bars like mobile */
+@media(min-width:701px){
+ .lanes{gap:5px;margin-top:6px}
+ .bar{height:5px;line-height:5px;padding:0;background:var(--c);opacity:.9;box-shadow:none!important}
+ .bar span{display:none}
+ .bar.cap-l{border-radius:3px 0 0 3px;margin-left:2px}
+ .bar.cap-r{border-radius:0 3px 3px 0;margin-right:2px}
+ .bar.cap-l.cap-r{border-radius:3px}
+ .day:nth-child(7n) .bar.cap-r{margin-right:2px}
+ .bar:hover{opacity:1;filter:brightness(1.1)}
+ body.glass .bar{background:var(--c)}
+}
+
+/* v0.13.2 PC: single-day events as dots too */
+@media(min-width:701px){
+ .singles{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+ .singles .pill{font-size:0;width:8px;height:8px;padding:0;margin:0!important;border-radius:50%;background:currentColor!important;opacity:1}
+ .singles .pill:hover{transform:scale(1.3)}
+}
+
+/* v0.13.3 dots on top (fixed row so lines stay aligned), long lines below */
+.singles:empty{display:flex}
+@media(min-width:701px){
+ .singles{height:8px;margin-top:7px;overflow:hidden;flex-wrap:nowrap}
+ .lanes{margin-top:7px}
+}
+@media(max-width:700px){
+ .singles{display:flex!important;flex-wrap:nowrap;gap:2px;height:6px;margin-top:3px;overflow:hidden}
+ .singles .pill{margin:0!important;flex-shrink:0}
+ .day .singles{order:1}.day .lanes{order:2;margin-top:3px}.day .holiday-name,.day .anniv-name{order:3}
+}
+
+/* v0.15 anniversaries manager */
+.anniv-list{display:flex;flex-direction:column;gap:2px;max-height:40dvh;overflow:auto}
+.anniv-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--divider)}
+.anniv-main{flex:1;min-width:0}.anniv-main strong{display:block;font-size:14px}.anniv-main small{color:var(--muted);font-size:12px}
+.anniv-row .danger{padding:6px 10px;font-size:12px}
+.anniv-h{font-size:14px;margin:6px 0 0}
+.anniv-date{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:end}
+.anniv-date .checkline{padding-bottom:10px}
